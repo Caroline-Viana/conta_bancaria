@@ -3,6 +3,8 @@ package conta;
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
@@ -10,17 +12,23 @@ public class Menu {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		Conta c1 = new Conta(1, 123, 1, "Carol", 100.0f);
-		c1.visualizar();
-		c1.setSaldo(1100.0f);
-		System.out.println(c1.getSaldo());
+		//c1.visualizar();
+		//c1.setSaldo(1100.0f);
+		//System.out.println(c1.getSaldo());
 		int opcao;
 
+		ContaCorrente c2 = new ContaCorrente(2, 123, 1, "Carol", 100.0f, 500.0f);
+		c2.sacar(300);
+		c2.visualizar();
+		
+		ContaPoupanca c3 = new ContaPoupanca(2, 123, 2, "Carol", 100.0f, 15);
+		c3.visualizar();
+		
 		while (true) {
-			System.out.println(Cores.TEXT_BLUE_BOLD + "*****************************************************");
+			System.out.println(Cores.ANSI_BLACK_BACKGROUND_BRIGHT + Cores.TEXT_WHITE_BOLD + "_____________________________________________________");
 			System.out.println("                                                     ");
-			System.out.println("                BANCO DO BRAZIL COM Z                ");
-			System.out.println("                                                     ");
-			System.out.println("*****************************************************");
+			System.out.println("      " + Cores.TEXT_GREEN_BOLD + "▌│█║▌║▌║" + Cores.TEXT_RESET + Cores.ANSI_BLACK_BACKGROUND_BRIGHT + " BANCO DO BRAZIL COM Z " + Cores.TEXT_GREEN_BOLD + "║▌║▌║█│▌" + Cores.TEXT_RESET + Cores.ANSI_BLACK_BACKGROUND_BRIGHT + "        ");
+			System.out.println("_____________________________________________________");
 			System.out.println("                                                     ");
 			System.out.println("        >-< 1 - Criar Conta                          ");
 			System.out.println("        >-< 2 - Listar todas as Contas               ");
@@ -31,8 +39,8 @@ public class Menu {
 			System.out.println("        >-< 7 - Depositar                            ");
 			System.out.println("        >-< 8 - Transferir valores entre Contas      ");
 			System.out.println("        >-< 9 - Sair                                 ");
+			System.out.println("_____________________________________________________");
 			System.out.println("                                                     ");
-			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     ");
 

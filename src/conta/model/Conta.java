@@ -1,5 +1,7 @@
 package conta.model;
 
+import conta.util.Cores;
+
 public class Conta {
 
 	private int numero;
@@ -78,9 +80,9 @@ public class Conta {
 		case 2 -> tipo = "Conta Poupança";
 		}
 
-		System.out.println("**************************");
+		System.out.println(Cores.TEXT_GREEN_BOLD + "**************************" + Cores.TEXT_RESET);
 		System.out.println("      DADOS DA CONTA      ");
-		System.out.println("**************************");
+		System.out.println(Cores.TEXT_GREEN_BOLD + "**************************" + Cores.TEXT_RESET);
 		System.out.println("Número da conta: " + this.numero);
 		System.out.println("Número da agência: " + this.agencia);
 		System.out.println("Tipo da conta: " + tipo);
